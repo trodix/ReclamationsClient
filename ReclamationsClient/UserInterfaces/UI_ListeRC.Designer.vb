@@ -24,13 +24,14 @@ Partial Class UI_ListeRC
     Private Sub InitializeComponent()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Col_idRC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col_DateRC = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col_CodeClient = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Col_NumConfIni = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.Col_Statut = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -63,7 +64,7 @@ Partial Class UI_ListeRC
         Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Col_idRC, Me.Col_DateRC, Me.Col_CodeClient, Me.Col_NumConfIni})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Col_idRC, Me.Col_DateRC, Me.Col_CodeClient, Me.Col_NumConfIni, Me.Col_Statut})
         Me.DataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DataGridView1.GridColor = System.Drawing.Color.White
         Me.DataGridView1.Location = New System.Drawing.Point(3, 93)
@@ -74,33 +75,6 @@ Partial Class UI_ListeRC
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DataGridView1.Size = New System.Drawing.Size(1114, 616)
         Me.DataGridView1.TabIndex = 0
-        '
-        'Col_idRC
-        '
-        Me.Col_idRC.HeaderText = "idRC"
-        Me.Col_idRC.Name = "Col_idRC"
-        Me.Col_idRC.ReadOnly = True
-        '
-        'Col_DateRC
-        '
-        Me.Col_DateRC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Col_DateRC.HeaderText = "Date de l'enregistrement"
-        Me.Col_DateRC.Name = "Col_DateRC"
-        Me.Col_DateRC.ReadOnly = True
-        '
-        'Col_CodeClient
-        '
-        Me.Col_CodeClient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Col_CodeClient.HeaderText = "Code client"
-        Me.Col_CodeClient.Name = "Col_CodeClient"
-        Me.Col_CodeClient.ReadOnly = True
-        '
-        'Col_NumConfIni
-        '
-        Me.Col_NumConfIni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Col_NumConfIni.HeaderText = "N° Conf initiale"
-        Me.Col_NumConfIni.Name = "Col_NumConfIni"
-        Me.Col_NumConfIni.ReadOnly = True
         '
         'Label1
         '
@@ -149,6 +123,40 @@ Partial Class UI_ListeRC
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1114, 44)
         Me.TableLayoutPanel2.TabIndex = 3
         '
+        'Col_idRC
+        '
+        Me.Col_idRC.HeaderText = "idRC"
+        Me.Col_idRC.Name = "Col_idRC"
+        Me.Col_idRC.ReadOnly = True
+        '
+        'Col_DateRC
+        '
+        Me.Col_DateRC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Col_DateRC.HeaderText = "Date de l'enregistrement"
+        Me.Col_DateRC.Name = "Col_DateRC"
+        Me.Col_DateRC.ReadOnly = True
+        '
+        'Col_CodeClient
+        '
+        Me.Col_CodeClient.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Col_CodeClient.HeaderText = "Code client"
+        Me.Col_CodeClient.Name = "Col_CodeClient"
+        Me.Col_CodeClient.ReadOnly = True
+        '
+        'Col_NumConfIni
+        '
+        Me.Col_NumConfIni.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Col_NumConfIni.HeaderText = "N° Conf initiale"
+        Me.Col_NumConfIni.Name = "Col_NumConfIni"
+        Me.Col_NumConfIni.ReadOnly = True
+        '
+        'Col_Statut
+        '
+        Me.Col_Statut.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Col_Statut.HeaderText = "Statut"
+        Me.Col_Statut.Name = "Col_Statut"
+        Me.Col_Statut.ReadOnly = True
+        '
         'UI_ListeRC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -166,11 +174,12 @@ Partial Class UI_ListeRC
 
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label1 As Label
+    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents Button1 As Button
     Friend WithEvents Col_idRC As DataGridViewTextBoxColumn
     Friend WithEvents Col_DateRC As DataGridViewTextBoxColumn
     Friend WithEvents Col_CodeClient As DataGridViewTextBoxColumn
     Friend WithEvents Col_NumConfIni As DataGridViewTextBoxColumn
-    Friend WithEvents Label1 As Label
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Col_Statut As DataGridViewTextBoxColumn
 End Class

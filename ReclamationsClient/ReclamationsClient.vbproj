@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsClient.vb" />
+    <Compile Include="ClsReclamation.vb" />
     <Compile Include="Database\ClsSQLReclamationClient.vb" />
     <Compile Include="Forms\FrmMenu.Designer.vb">
       <DependentUpon>FrmMenu.vb</DependentUpon>

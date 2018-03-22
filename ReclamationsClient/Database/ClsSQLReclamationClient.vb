@@ -1,9 +1,9 @@
 ﻿Public Class ClsSQLReclamationClient
 
-    'Property _lesClients As New List(Of ClsClient)
+    Property _lesReclamations As New Dictionary(Of Integer, ClsReclamation)
 
     Public Sub New()
-        'readLesClients()
+        readLesReclamations()
     End Sub
 
     Public Function readLesClientsByCode(Code As String) As List(Of ClsClient)
@@ -18,5 +18,18 @@
         End Using
         Return lesClients
     End Function
+
+    Private Sub readLesReclamations()
+        Dim lesReclamations As New Dictionary(Of Integer, ClsReclamation)
+        Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[RECLAMATIONS]"
+        Using s_FbMyReader As New ClassConnection.ClsOdbcConnection(req, ClassConnection.ClsChaineConnection.ChaineConnection.ENTRETIEN)
+            With s_FbMyReader
+                While .OdbcReader.Read
+                    Dim laReclamation As New ClsReclamation()
+                    _lesReclamations.Add(laReclamation._idRC, laReclamation)
+                End While
+            End With
+        End Using
+    End Sub
 
 End Class
