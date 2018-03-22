@@ -76,11 +76,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClsClient.vb" />
-    <Compile Include="ClsSQLReclamationClient.vb" />
-    <Compile Include="FrmMenu.Designer.vb">
+    <Compile Include="Database\ClsSQLReclamationClient.vb" />
+    <Compile Include="Forms\FrmMenu.Designer.vb">
       <DependentUpon>FrmMenu.vb</DependentUpon>
     </Compile>
-    <Compile Include="FrmMenu.vb">
+    <Compile Include="Forms\FrmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -98,15 +98,21 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="UI_RC.Designer.vb">
+    <Compile Include="UserInterfaces\UI_ListeRC.Designer.vb">
+      <DependentUpon>UI_ListeRC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserInterfaces\UI_ListeRC.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserInterfaces\UI_RC.Designer.vb">
       <DependentUpon>UI_RC.vb</DependentUpon>
     </Compile>
-    <Compile Include="UI_RC.vb">
+    <Compile Include="UserInterfaces\UI_RC.vb">
       <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FrmMenu.resx">
+    <EmbeddedResource Include="Forms\FrmMenu.resx">
       <DependentUpon>FrmMenu.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -115,7 +121,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI_RC.resx">
+    <EmbeddedResource Include="UserInterfaces\UI_ListeRC.resx">
+      <DependentUpon>UI_ListeRC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserInterfaces\UI_RC.resx">
       <DependentUpon>UI_RC.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
@@ -131,5 +140,6 @@
     </None>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

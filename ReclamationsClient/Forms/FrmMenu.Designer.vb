@@ -22,9 +22,11 @@ Partial Class FrmMenu
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmMenu))
         Me.Panel_Main = New System.Windows.Forms.Panel()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_Liste = New System.Windows.Forms.Button()
+        Me.Btn_Nouveau = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
         Me.FlowLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
@@ -41,26 +43,47 @@ Partial Class FrmMenu
         'FlowLayoutPanel1
         '
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.FlowLayoutPanel1.Controls.Add(Me.Button1)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Btn_Liste)
+        Me.FlowLayoutPanel1.Controls.Add(Me.Btn_Nouveau)
         Me.FlowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(3, 3)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(1028, 44)
         Me.FlowLayoutPanel1.TabIndex = 2
         '
-        'Button1
+        'Btn_Liste
         '
-        Me.Button1.AutoSize = True
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(3, 3)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(170, 40)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "Réclamations client"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btn_Liste.AutoSize = True
+        Me.Btn_Liste.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Btn_Liste.FlatAppearance.BorderSize = 0
+        Me.Btn_Liste.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Liste.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Liste.ForeColor = System.Drawing.Color.White
+        Me.Btn_Liste.Image = CType(resources.GetObject("Btn_Liste.Image"), System.Drawing.Image)
+        Me.Btn_Liste.Location = New System.Drawing.Point(3, 3)
+        Me.Btn_Liste.Name = "Btn_Liste"
+        Me.Btn_Liste.Size = New System.Drawing.Size(222, 40)
+        Me.Btn_Liste.TabIndex = 0
+        Me.Btn_Liste.Text = "Liste des Réclamations"
+        Me.Btn_Liste.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Liste.UseVisualStyleBackColor = True
+        '
+        'Btn_Nouveau
+        '
+        Me.Btn_Nouveau.AutoSize = True
+        Me.Btn_Nouveau.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Btn_Nouveau.FlatAppearance.BorderSize = 0
+        Me.Btn_Nouveau.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Nouveau.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Nouveau.ForeColor = System.Drawing.Color.White
+        Me.Btn_Nouveau.Image = CType(resources.GetObject("Btn_Nouveau.Image"), System.Drawing.Image)
+        Me.Btn_Nouveau.Location = New System.Drawing.Point(231, 3)
+        Me.Btn_Nouveau.Name = "Btn_Nouveau"
+        Me.Btn_Nouveau.Size = New System.Drawing.Size(223, 40)
+        Me.Btn_Nouveau.TabIndex = 1
+        Me.Btn_Nouveau.Text = "Nouvelle Réclamation"
+        Me.Btn_Nouveau.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.Btn_Nouveau.UseVisualStyleBackColor = True
         '
         'TableLayoutPanel1
         '
@@ -95,6 +118,7 @@ Partial Class FrmMenu
     End Sub
     Friend WithEvents Panel_Main As Panel
     Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Btn_Liste As Button
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents Btn_Nouveau As Button
 End Class
