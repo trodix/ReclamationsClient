@@ -26,7 +26,7 @@ Partial Class UI_RC
         Me.TLP_Enregistrement = New System.Windows.Forms.TableLayoutPanel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.Dtp_DateReception = New System.Windows.Forms.DateTimePicker()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -35,11 +35,11 @@ Partial Class UI_RC
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Btn_Enreg = New System.Windows.Forms.Button()
         Me.RB_Soustraitance = New System.Windows.Forms.RadioButton()
         Me.RB_Agencement = New System.Windows.Forms.RadioButton()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.Tbx_RefClient = New System.Windows.Forms.TextBox()
+        Me.Tbx_ConfIni = New System.Windows.Forms.TextBox()
         Me.Label_NomCli = New System.Windows.Forms.Label()
         Me.Label_ContactCli = New System.Windows.Forms.Label()
         Me.Label_TelCli = New System.Windows.Forms.Label()
@@ -47,21 +47,23 @@ Partial Class UI_RC
         Me.Cmb_Clients = New System.Windows.Forms.ComboBox()
         Me.Label_Titre = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.RTB_AnalyseCommentaire = New System.Windows.Forms.RichTextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Btn_AnalyseRejet = New System.Windows.Forms.Button()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.Btn_AnalyseValider = New System.Windows.Forms.Button()
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
-        Me.NumericUpDown4 = New System.Windows.Forms.NumericUpDown()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Nud_NbPieces = New System.Windows.Forms.NumericUpDown()
+        Me.Btn_Recencement = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
         Me.Label20 = New System.Windows.Forms.Label()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton4 = New System.Windows.Forms.RadioButton()
+        Me.RB_PieceRetour_Oui = New System.Windows.Forms.RadioButton()
+        Me.RB_PieceRetour_Non = New System.Windows.Forms.RadioButton()
         Me.Label21 = New System.Windows.Forms.Label()
+        Me.Nud_ValMarchande = New System.Windows.Forms.NumericUpDown()
         Me.Label22 = New System.Windows.Forms.Label()
-        Me.NumericUpDown2 = New System.Windows.Forms.NumericUpDown()
-        Me.NumericUpDown3 = New System.Windows.Forms.NumericUpDown()
+        Me.Nud_CoutTransport = New System.Windows.Forms.NumericUpDown()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel3 = New System.Windows.Forms.TableLayoutPanel()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -70,18 +72,17 @@ Partial Class UI_RC
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Label_Statut = New System.Windows.Forms.Label()
         Me.TableLayoutPanel4 = New System.Windows.Forms.TableLayoutPanel()
-        Me.RichTextBox3 = New System.Windows.Forms.RichTextBox()
+        Me.RTB_Commentaire = New System.Windows.Forms.RichTextBox()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Label26 = New System.Windows.Forms.Label()
-        Me.FlowLayoutPanel2 = New System.Windows.Forms.FlowLayoutPanel()
+        Me.FLP_PiecesJointes = New System.Windows.Forms.FlowLayoutPanel()
         Me.TLP_Main.SuspendLayout()
         Me.TLP_Enregistrement.SuspendLayout()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.TableLayoutPanel2.SuspendLayout()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Nud_NbPieces, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Nud_ValMarchande, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Nud_CoutTransport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel3.SuspendLayout()
         Me.TableLayoutPanel4.SuspendLayout()
         Me.SuspendLayout()
@@ -110,15 +111,15 @@ Partial Class UI_RC
         Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300.0!))
         Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 500.0!))
-        Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
+        Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 300.0!))
         Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 400.0!))
-        Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TLP_Main.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TLP_Main.Size = New System.Drawing.Size(1151, 744)
         Me.TLP_Main.TabIndex = 0
         '
         'TLP_Enregistrement
         '
+        Me.TLP_Enregistrement.AutoScroll = True
         Me.TLP_Enregistrement.AutoSize = True
         Me.TLP_Enregistrement.BackColor = System.Drawing.Color.Transparent
         Me.TLP_Enregistrement.ColumnCount = 7
@@ -131,7 +132,7 @@ Partial Class UI_RC
         Me.TLP_Enregistrement.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.TLP_Enregistrement.Controls.Add(Me.Label1, 1, 2)
         Me.TLP_Enregistrement.Controls.Add(Me.Label2, 1, 4)
-        Me.TLP_Enregistrement.Controls.Add(Me.DateTimePicker1, 2, 4)
+        Me.TLP_Enregistrement.Controls.Add(Me.Dtp_DateReception, 2, 4)
         Me.TLP_Enregistrement.Controls.Add(Me.Label3, 1, 5)
         Me.TLP_Enregistrement.Controls.Add(Me.Label4, 1, 6)
         Me.TLP_Enregistrement.Controls.Add(Me.Label5, 4, 4)
@@ -140,11 +141,11 @@ Partial Class UI_RC
         Me.TLP_Enregistrement.Controls.Add(Me.Label8, 1, 8)
         Me.TLP_Enregistrement.Controls.Add(Me.Label9, 1, 9)
         Me.TLP_Enregistrement.Controls.Add(Me.Label12, 0, 0)
-        Me.TLP_Enregistrement.Controls.Add(Me.Button1, 4, 11)
+        Me.TLP_Enregistrement.Controls.Add(Me.Btn_Enreg, 4, 11)
         Me.TLP_Enregistrement.Controls.Add(Me.RB_Soustraitance, 2, 2)
         Me.TLP_Enregistrement.Controls.Add(Me.RB_Agencement, 2, 3)
-        Me.TLP_Enregistrement.Controls.Add(Me.TextBox1, 2, 8)
-        Me.TLP_Enregistrement.Controls.Add(Me.TextBox2, 2, 9)
+        Me.TLP_Enregistrement.Controls.Add(Me.Tbx_RefClient, 2, 8)
+        Me.TLP_Enregistrement.Controls.Add(Me.Tbx_ConfIni, 2, 9)
         Me.TLP_Enregistrement.Controls.Add(Me.Label_NomCli, 2, 6)
         Me.TLP_Enregistrement.Controls.Add(Me.Label_ContactCli, 5, 4)
         Me.TLP_Enregistrement.Controls.Add(Me.Label_TelCli, 5, 5)
@@ -198,14 +199,14 @@ Partial Class UI_RC
         Me.Label2.Text = "Date réception RC: "
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'DateTimePicker1
+        'Dtp_DateReception
         '
-        Me.DateTimePicker1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Location = New System.Drawing.Point(315, 133)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(214, 26)
-        Me.DateTimePicker1.TabIndex = 3
+        Me.Dtp_DateReception.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Dtp_DateReception.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dtp_DateReception.Location = New System.Drawing.Point(315, 133)
+        Me.Dtp_DateReception.Name = "Dtp_DateReception"
+        Me.Dtp_DateReception.Size = New System.Drawing.Size(214, 26)
+        Me.Dtp_DateReception.TabIndex = 3
         '
         'Label3
         '
@@ -313,20 +314,20 @@ Partial Class UI_RC
         Me.Label12.Text = "Enregistrement"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Button1
+        'Btn_Enreg
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.Button1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(575, 353)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(194, 44)
-        Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Enregistrer"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Btn_Enreg.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Btn_Enreg.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Btn_Enreg.FlatAppearance.BorderSize = 0
+        Me.Btn_Enreg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Enreg.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Enreg.ForeColor = System.Drawing.Color.White
+        Me.Btn_Enreg.Location = New System.Drawing.Point(575, 353)
+        Me.Btn_Enreg.Name = "Btn_Enreg"
+        Me.Btn_Enreg.Size = New System.Drawing.Size(194, 44)
+        Me.Btn_Enreg.TabIndex = 16
+        Me.Btn_Enreg.Text = "Enregistrer"
+        Me.Btn_Enreg.UseVisualStyleBackColor = False
         '
         'RB_Soustraitance
         '
@@ -340,7 +341,7 @@ Partial Class UI_RC
         Me.RB_Soustraitance.Size = New System.Drawing.Size(214, 24)
         Me.RB_Soustraitance.TabIndex = 18
         Me.RB_Soustraitance.TabStop = True
-        Me.RB_Soustraitance.Text = "Client Soustraitance"
+        Me.RB_Soustraitance.Text = "Soustraitance"
         Me.RB_Soustraitance.UseVisualStyleBackColor = True
         '
         'RB_Agencement
@@ -358,27 +359,27 @@ Partial Class UI_RC
         Me.RB_Agencement.Text = "Agencement"
         Me.RB_Agencement.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'Tbx_RefClient
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(315, 273)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(214, 19)
-        Me.TextBox1.TabIndex = 20
+        Me.Tbx_RefClient.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Tbx_RefClient.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Tbx_RefClient.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Tbx_RefClient.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbx_RefClient.Location = New System.Drawing.Point(315, 273)
+        Me.Tbx_RefClient.Name = "Tbx_RefClient"
+        Me.Tbx_RefClient.Size = New System.Drawing.Size(214, 19)
+        Me.Tbx_RefClient.TabIndex = 20
         '
-        'TextBox2
+        'Tbx_ConfIni
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.TextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TextBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox2.Location = New System.Drawing.Point(315, 303)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(214, 19)
-        Me.TextBox2.TabIndex = 21
+        Me.Tbx_ConfIni.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Tbx_ConfIni.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Tbx_ConfIni.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Tbx_ConfIni.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbx_ConfIni.Location = New System.Drawing.Point(315, 303)
+        Me.Tbx_ConfIni.Name = "Tbx_ConfIni"
+        Me.Tbx_ConfIni.Size = New System.Drawing.Size(214, 19)
+        Me.Tbx_ConfIni.TabIndex = 21
         '
         'Label_NomCli
         '
@@ -451,35 +452,79 @@ Partial Class UI_RC
         '
         'TableLayoutPanel1
         '
+        Me.TableLayoutPanel1.AutoScroll = True
         Me.TableLayoutPanel1.AutoSize = True
-        Me.TableLayoutPanel1.ColumnCount = 7
+        Me.TableLayoutPanel1.ColumnCount = 5
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 40.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.TableLayoutPanel1.Controls.Add(Me.RTB_AnalyseCommentaire, 1, 3)
+        Me.TableLayoutPanel1.Controls.Add(Me.Label10, 1, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Btn_AnalyseRejet, 1, 5)
         Me.TableLayoutPanel1.Controls.Add(Me.Label13, 0, 0)
+        Me.TableLayoutPanel1.Controls.Add(Me.Btn_AnalyseValider, 3, 5)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(23, 945)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 5
+        Me.TableLayoutPanel1.RowCount = 7
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1105, 194)
+        Me.TableLayoutPanel1.Size = New System.Drawing.Size(1105, 294)
         Me.TableLayoutPanel1.TabIndex = 2
+        '
+        'RTB_AnalyseCommentaire
+        '
+        Me.RTB_AnalyseCommentaire.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.RTB_AnalyseCommentaire.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TableLayoutPanel1.SetColumnSpan(Me.RTB_AnalyseCommentaire, 3)
+        Me.RTB_AnalyseCommentaire.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RTB_AnalyseCommentaire.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RTB_AnalyseCommentaire.Location = New System.Drawing.Point(335, 103)
+        Me.RTB_AnalyseCommentaire.Name = "RTB_AnalyseCommentaire"
+        Me.RTB_AnalyseCommentaire.Size = New System.Drawing.Size(434, 94)
+        Me.RTB_AnalyseCommentaire.TabIndex = 4
+        Me.RTB_AnalyseCommentaire.Text = ""
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.TableLayoutPanel1.SetColumnSpan(Me.Label10, 3)
+        Me.Label10.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Label10.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(335, 70)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(434, 30)
+        Me.Label10.TabIndex = 3
+        Me.Label10.Text = "Commentaires"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Btn_AnalyseRejet
+        '
+        Me.Btn_AnalyseRejet.BackColor = System.Drawing.Color.Red
+        Me.Btn_AnalyseRejet.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Btn_AnalyseRejet.FlatAppearance.BorderSize = 0
+        Me.Btn_AnalyseRejet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_AnalyseRejet.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_AnalyseRejet.ForeColor = System.Drawing.Color.White
+        Me.Btn_AnalyseRejet.Location = New System.Drawing.Point(335, 223)
+        Me.Btn_AnalyseRejet.Name = "Btn_AnalyseRejet"
+        Me.Btn_AnalyseRejet.Size = New System.Drawing.Size(194, 44)
+        Me.Btn_AnalyseRejet.TabIndex = 2
+        Me.Btn_AnalyseRejet.Text = "Rejeter"
+        Me.Btn_AnalyseRejet.UseVisualStyleBackColor = False
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.BackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TableLayoutPanel1.SetColumnSpan(Me.Label13, 8)
+        Me.TableLayoutPanel1.SetColumnSpan(Me.Label13, 6)
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label13.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -491,8 +536,24 @@ Partial Class UI_RC
         Me.Label13.Text = "Analyse"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'Btn_AnalyseValider
+        '
+        Me.Btn_AnalyseValider.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Btn_AnalyseValider.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Btn_AnalyseValider.FlatAppearance.BorderSize = 0
+        Me.Btn_AnalyseValider.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_AnalyseValider.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_AnalyseValider.ForeColor = System.Drawing.Color.White
+        Me.Btn_AnalyseValider.Location = New System.Drawing.Point(575, 223)
+        Me.Btn_AnalyseValider.Name = "Btn_AnalyseValider"
+        Me.Btn_AnalyseValider.Size = New System.Drawing.Size(194, 44)
+        Me.Btn_AnalyseValider.TabIndex = 1
+        Me.Btn_AnalyseValider.Text = "Valider"
+        Me.Btn_AnalyseValider.UseVisualStyleBackColor = False
+        '
         'TableLayoutPanel2
         '
+        Me.TableLayoutPanel2.AutoScroll = True
         Me.TableLayoutPanel2.AutoSize = True
         Me.TableLayoutPanel2.ColumnCount = 7
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -502,23 +563,21 @@ Partial Class UI_RC
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.NumericUpDown4, 2, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.Button4, 2, 9)
+        Me.TableLayoutPanel2.Controls.Add(Me.Nud_NbPieces, 2, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Btn_Recencement, 4, 7)
         Me.TableLayoutPanel2.Controls.Add(Me.Label14, 0, 0)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label18, 1, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label19, 1, 3)
-        Me.TableLayoutPanel2.Controls.Add(Me.NumericUpDown1, 2, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label20, 1, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.RadioButton3, 2, 4)
-        Me.TableLayoutPanel2.Controls.Add(Me.RadioButton4, 2, 5)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label21, 1, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.Label22, 1, 7)
-        Me.TableLayoutPanel2.Controls.Add(Me.NumericUpDown2, 2, 6)
-        Me.TableLayoutPanel2.Controls.Add(Me.NumericUpDown3, 2, 7)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label19, 1, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label20, 1, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.RB_PieceRetour_Oui, 2, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.RB_PieceRetour_Non, 2, 4)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label21, 4, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Nud_ValMarchande, 5, 2)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label22, 4, 3)
+        Me.TableLayoutPanel2.Controls.Add(Me.Nud_CoutTransport, 5, 3)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(23, 1145)
+        Me.TableLayoutPanel2.Location = New System.Drawing.Point(23, 1245)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 11
+        Me.TableLayoutPanel2.RowCount = 9
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
@@ -526,41 +585,37 @@ Partial Class UI_RC
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel2.Size = New System.Drawing.Size(1105, 394)
         Me.TableLayoutPanel2.TabIndex = 3
         '
-        'NumericUpDown4
+        'Nud_NbPieces
         '
-        Me.NumericUpDown4.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown4.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.NumericUpDown4.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NumericUpDown4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown4.Location = New System.Drawing.Point(335, 104)
-        Me.NumericUpDown4.Name = "NumericUpDown4"
-        Me.NumericUpDown4.Size = New System.Drawing.Size(194, 22)
-        Me.NumericUpDown4.TabIndex = 29
+        Me.Nud_NbPieces.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Nud_NbPieces.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Nud_NbPieces.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Nud_NbPieces.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nud_NbPieces.Location = New System.Drawing.Point(335, 74)
+        Me.Nud_NbPieces.Name = "Nud_NbPieces"
+        Me.Nud_NbPieces.Size = New System.Drawing.Size(194, 22)
+        Me.Nud_NbPieces.TabIndex = 29
         '
-        'Button4
+        'Btn_Recencement
         '
-        Me.Button4.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(76, Byte), Integer))
-        Me.Button4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button4.ForeColor = System.Drawing.Color.White
-        Me.Button4.Location = New System.Drawing.Point(335, 273)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(194, 44)
-        Me.Button4.TabIndex = 28
-        Me.Button4.Text = "Enregistrer"
-        Me.Button4.UseVisualStyleBackColor = False
+        Me.Btn_Recencement.BackColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(76, Byte), Integer))
+        Me.Btn_Recencement.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Btn_Recencement.FlatAppearance.BorderSize = 0
+        Me.Btn_Recencement.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btn_Recencement.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Btn_Recencement.ForeColor = System.Drawing.Color.White
+        Me.Btn_Recencement.Location = New System.Drawing.Point(575, 223)
+        Me.Btn_Recencement.Name = "Btn_Recencement"
+        Me.Btn_Recencement.Size = New System.Drawing.Size(194, 44)
+        Me.Btn_Recencement.TabIndex = 28
+        Me.Btn_Recencement.Text = "Enregistrer"
+        Me.Btn_Recencement.UseVisualStyleBackColor = False
         '
         'Label14
         '
@@ -578,40 +633,17 @@ Partial Class UI_RC
         Me.Label14.Text = "Recencement"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Label18.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(135, 70)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(194, 30)
-        Me.Label18.TabIndex = 16
-        Me.Label18.Text = "Delai traitement"
-        Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
         'Label19
         '
         Me.Label19.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label19.AutoSize = True
         Me.Label19.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(135, 105)
+        Me.Label19.Location = New System.Drawing.Point(135, 75)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(194, 19)
         Me.Label19.TabIndex = 18
         Me.Label19.Text = "Nombre pièces RC"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'NumericUpDown1
-        '
-        Me.NumericUpDown1.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.NumericUpDown1.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NumericUpDown1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown1.Location = New System.Drawing.Point(335, 74)
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(194, 22)
-        Me.NumericUpDown1.TabIndex = 20
         '
         'Label20
         '
@@ -619,7 +651,7 @@ Partial Class UI_RC
         Me.Label20.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label20.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Label20.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(135, 130)
+        Me.Label20.Location = New System.Drawing.Point(135, 100)
         Me.Label20.Name = "Label20"
         Me.TableLayoutPanel2.SetRowSpan(Me.Label20, 2)
         Me.Label20.Size = New System.Drawing.Size(194, 60)
@@ -627,81 +659,83 @@ Partial Class UI_RC
         Me.Label20.Text = "Pièce Retour"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'RadioButton3
+        'RB_PieceRetour_Oui
         '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton3.Location = New System.Drawing.Point(335, 133)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(194, 24)
-        Me.RadioButton3.TabIndex = 22
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "Oui"
-        Me.RadioButton3.UseVisualStyleBackColor = True
+        Me.RB_PieceRetour_Oui.AutoSize = True
+        Me.RB_PieceRetour_Oui.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RB_PieceRetour_Oui.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RB_PieceRetour_Oui.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RB_PieceRetour_Oui.Location = New System.Drawing.Point(335, 103)
+        Me.RB_PieceRetour_Oui.Name = "RB_PieceRetour_Oui"
+        Me.RB_PieceRetour_Oui.Size = New System.Drawing.Size(194, 24)
+        Me.RB_PieceRetour_Oui.TabIndex = 22
+        Me.RB_PieceRetour_Oui.TabStop = True
+        Me.RB_PieceRetour_Oui.Text = "Oui"
+        Me.RB_PieceRetour_Oui.UseVisualStyleBackColor = True
         '
-        'RadioButton4
+        'RB_PieceRetour_Non
         '
-        Me.RadioButton4.AutoSize = True
-        Me.RadioButton4.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RadioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RadioButton4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadioButton4.Location = New System.Drawing.Point(335, 163)
-        Me.RadioButton4.Name = "RadioButton4"
-        Me.RadioButton4.Size = New System.Drawing.Size(194, 24)
-        Me.RadioButton4.TabIndex = 23
-        Me.RadioButton4.TabStop = True
-        Me.RadioButton4.Text = "Non"
-        Me.RadioButton4.UseVisualStyleBackColor = True
+        Me.RB_PieceRetour_Non.AutoSize = True
+        Me.RB_PieceRetour_Non.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RB_PieceRetour_Non.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RB_PieceRetour_Non.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RB_PieceRetour_Non.Location = New System.Drawing.Point(335, 133)
+        Me.RB_PieceRetour_Non.Name = "RB_PieceRetour_Non"
+        Me.RB_PieceRetour_Non.Size = New System.Drawing.Size(194, 24)
+        Me.RB_PieceRetour_Non.TabIndex = 23
+        Me.RB_PieceRetour_Non.TabStop = True
+        Me.RB_PieceRetour_Non.Text = "Non"
+        Me.RB_PieceRetour_Non.UseVisualStyleBackColor = True
         '
         'Label21
         '
         Me.Label21.AutoSize = True
         Me.Label21.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label21.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(135, 190)
+        Me.Label21.Location = New System.Drawing.Point(575, 70)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(194, 30)
         Me.Label21.TabIndex = 24
         Me.Label21.Text = "Valeur Marchande"
         Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
+        'Nud_ValMarchande
+        '
+        Me.Nud_ValMarchande.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Nud_ValMarchande.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Nud_ValMarchande.DecimalPlaces = 2
+        Me.Nud_ValMarchande.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Nud_ValMarchande.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nud_ValMarchande.Location = New System.Drawing.Point(775, 73)
+        Me.Nud_ValMarchande.Name = "Nud_ValMarchande"
+        Me.Nud_ValMarchande.Size = New System.Drawing.Size(194, 22)
+        Me.Nud_ValMarchande.TabIndex = 26
+        Me.Nud_ValMarchande.ThousandsSeparator = True
+        '
         'Label22
         '
         Me.Label22.AutoSize = True
         Me.Label22.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Label22.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label22.Location = New System.Drawing.Point(135, 220)
+        Me.Label22.Location = New System.Drawing.Point(575, 100)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(194, 30)
         Me.Label22.TabIndex = 25
         Me.Label22.Text = "Coût de Transport"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'NumericUpDown2
+        'Nud_CoutTransport
         '
-        Me.NumericUpDown2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.NumericUpDown2.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NumericUpDown2.DecimalPlaces = 2
-        Me.NumericUpDown2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown2.Location = New System.Drawing.Point(335, 194)
-        Me.NumericUpDown2.Name = "NumericUpDown2"
-        Me.NumericUpDown2.Size = New System.Drawing.Size(194, 22)
-        Me.NumericUpDown2.TabIndex = 26
-        '
-        'NumericUpDown3
-        '
-        Me.NumericUpDown3.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.NumericUpDown3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.NumericUpDown3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.NumericUpDown3.DecimalPlaces = 2
-        Me.NumericUpDown3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NumericUpDown3.Location = New System.Drawing.Point(335, 224)
-        Me.NumericUpDown3.Name = "NumericUpDown3"
-        Me.NumericUpDown3.Size = New System.Drawing.Size(194, 22)
-        Me.NumericUpDown3.TabIndex = 27
+        Me.Nud_CoutTransport.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.Nud_CoutTransport.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Nud_CoutTransport.DecimalPlaces = 2
+        Me.Nud_CoutTransport.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Nud_CoutTransport.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Nud_CoutTransport.Location = New System.Drawing.Point(775, 103)
+        Me.Nud_CoutTransport.Name = "Nud_CoutTransport"
+        Me.Nud_CoutTransport.Size = New System.Drawing.Size(194, 22)
+        Me.Nud_CoutTransport.TabIndex = 27
+        Me.Nud_CoutTransport.ThousandsSeparator = True
         '
         'Label23
         '
@@ -716,6 +750,7 @@ Partial Class UI_RC
         '
         'TableLayoutPanel3
         '
+        Me.TableLayoutPanel3.AutoScroll = True
         Me.TableLayoutPanel3.AutoSize = True
         Me.TableLayoutPanel3.ColumnCount = 4
         Me.TableLayoutPanel3.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 100.0!))
@@ -812,6 +847,7 @@ Partial Class UI_RC
         '
         'TableLayoutPanel4
         '
+        Me.TableLayoutPanel4.AutoScroll = True
         Me.TableLayoutPanel4.ColumnCount = 5
         Me.TableLayoutPanel3.SetColumnSpan(Me.TableLayoutPanel4, 4)
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
@@ -819,10 +855,10 @@ Partial Class UI_RC
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300.0!))
         Me.TableLayoutPanel4.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel4.Controls.Add(Me.RichTextBox3, 1, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.RTB_Commentaire, 1, 1)
         Me.TableLayoutPanel4.Controls.Add(Me.Label25, 1, 0)
         Me.TableLayoutPanel4.Controls.Add(Me.Label26, 3, 0)
-        Me.TableLayoutPanel4.Controls.Add(Me.FlowLayoutPanel2, 3, 1)
+        Me.TableLayoutPanel4.Controls.Add(Me.FLP_PiecesJointes, 3, 1)
         Me.TableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel4.Location = New System.Drawing.Point(3, 123)
         Me.TableLayoutPanel4.Name = "TableLayoutPanel4"
@@ -832,17 +868,17 @@ Partial Class UI_RC
         Me.TableLayoutPanel4.Size = New System.Drawing.Size(1099, 168)
         Me.TableLayoutPanel4.TabIndex = 5
         '
-        'RichTextBox3
+        'RTB_Commentaire
         '
-        Me.RichTextBox3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.RichTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.RichTextBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RichTextBox3.Location = New System.Drawing.Point(167, 33)
-        Me.RichTextBox3.Name = "RichTextBox3"
-        Me.RichTextBox3.Size = New System.Drawing.Size(444, 132)
-        Me.RichTextBox3.TabIndex = 0
-        Me.RichTextBox3.Text = ""
+        Me.RTB_Commentaire.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.RTB_Commentaire.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.RTB_Commentaire.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.RTB_Commentaire.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RTB_Commentaire.Location = New System.Drawing.Point(167, 33)
+        Me.RTB_Commentaire.Name = "RTB_Commentaire"
+        Me.RTB_Commentaire.Size = New System.Drawing.Size(444, 132)
+        Me.RTB_Commentaire.TabIndex = 0
+        Me.RTB_Commentaire.Text = ""
         '
         'Label25
         '
@@ -868,16 +904,16 @@ Partial Class UI_RC
         Me.Label26.Text = "Pièces jointes"
         Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'FlowLayoutPanel2
+        'FLP_PiecesJointes
         '
-        Me.FlowLayoutPanel2.BackColor = System.Drawing.Color.Transparent
-        Me.FlowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.FlowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
-        Me.FlowLayoutPanel2.Location = New System.Drawing.Point(637, 33)
-        Me.FlowLayoutPanel2.Name = "FlowLayoutPanel2"
-        Me.FlowLayoutPanel2.Size = New System.Drawing.Size(294, 132)
-        Me.FlowLayoutPanel2.TabIndex = 15
+        Me.FLP_PiecesJointes.BackColor = System.Drawing.Color.Transparent
+        Me.FLP_PiecesJointes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.FLP_PiecesJointes.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.FLP_PiecesJointes.FlowDirection = System.Windows.Forms.FlowDirection.TopDown
+        Me.FLP_PiecesJointes.Location = New System.Drawing.Point(637, 33)
+        Me.FLP_PiecesJointes.Name = "FLP_PiecesJointes"
+        Me.FLP_PiecesJointes.Size = New System.Drawing.Size(294, 132)
+        Me.FLP_PiecesJointes.TabIndex = 15
         '
         'UI_RC
         '
@@ -895,10 +931,9 @@ Partial Class UI_RC
         Me.TableLayoutPanel1.PerformLayout()
         Me.TableLayoutPanel2.ResumeLayout(False)
         Me.TableLayoutPanel2.PerformLayout()
-        CType(Me.NumericUpDown4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.NumericUpDown3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Nud_NbPieces, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Nud_ValMarchande, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Nud_CoutTransport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TableLayoutPanel3.ResumeLayout(False)
         Me.TableLayoutPanel3.PerformLayout()
         Me.TableLayoutPanel4.ResumeLayout(False)
@@ -913,29 +948,27 @@ Partial Class UI_RC
     Friend WithEvents Label13 As Label
     Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
     Friend WithEvents Label14 As Label
-    Friend WithEvents Label18 As Label
     Friend WithEvents Label19 As Label
-    Friend WithEvents NumericUpDown1 As NumericUpDown
     Friend WithEvents Label20 As Label
-    Friend WithEvents RadioButton3 As RadioButton
-    Friend WithEvents RadioButton4 As RadioButton
+    Friend WithEvents RB_PieceRetour_Oui As RadioButton
+    Friend WithEvents RB_PieceRetour_Non As RadioButton
     Friend WithEvents Label21 As Label
     Friend WithEvents Label22 As Label
-    Friend WithEvents NumericUpDown2 As NumericUpDown
-    Friend WithEvents NumericUpDown3 As NumericUpDown
-    Friend WithEvents Button4 As Button
+    Friend WithEvents Nud_ValMarchande As NumericUpDown
+    Friend WithEvents Nud_CoutTransport As NumericUpDown
+    Friend WithEvents Btn_Recencement As Button
     Friend WithEvents Label23 As Label
     Friend WithEvents TableLayoutPanel3 As TableLayoutPanel
     Friend WithEvents Button5 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Label24 As Label
     Friend WithEvents Button7 As Button
-    Friend WithEvents NumericUpDown4 As NumericUpDown
+    Friend WithEvents Nud_NbPieces As NumericUpDown
     Friend WithEvents Label_Statut As Label
     Friend WithEvents TLP_Enregistrement As TableLayoutPanel
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents Dtp_DateReception As DateTimePicker
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
@@ -944,19 +977,23 @@ Partial Class UI_RC
     Friend WithEvents Label8 As Label
     Friend WithEvents Label9 As Label
     Friend WithEvents Label12 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents Btn_Enreg As Button
     Friend WithEvents RB_Soustraitance As RadioButton
     Friend WithEvents RB_Agencement As RadioButton
-    Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents Tbx_RefClient As TextBox
+    Friend WithEvents Tbx_ConfIni As TextBox
     Friend WithEvents Label_NomCli As Label
     Friend WithEvents Label_ContactCli As Label
     Friend WithEvents Label_TelCli As Label
     Friend WithEvents Label_MailCli As Label
     Friend WithEvents TableLayoutPanel4 As TableLayoutPanel
-    Friend WithEvents RichTextBox3 As RichTextBox
+    Friend WithEvents RTB_Commentaire As RichTextBox
     Friend WithEvents Label25 As Label
     Friend WithEvents Label26 As Label
-    Friend WithEvents FlowLayoutPanel2 As FlowLayoutPanel
+    Friend WithEvents FLP_PiecesJointes As FlowLayoutPanel
     Friend WithEvents Cmb_Clients As ComboBox
+    Friend WithEvents Btn_AnalyseValider As Button
+    Friend WithEvents RTB_AnalyseCommentaire As RichTextBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Btn_AnalyseRejet As Button
 End Class

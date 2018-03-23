@@ -5,14 +5,20 @@
     Property _Contact As String
     Property _Tel As String
     Property _Mail As String
+    Property _TypeClient As String
 
-    Public Sub New(Code As String, Nom As String, Contact As String, Tel As String, Mail As String)
+    Public Sub New(Code As String, Nom As String, Contact As String, Tel As String, Mail As String, Optional TypeClient As String = Nothing)
 
         _Code = Code
         _Nom = Nom
         _Contact = Contact
         _Tel = Tel
         _Mail = Mail
+        _TypeClient = TypeClient
+
+    End Sub
+
+    Public Sub New()
 
     End Sub
 
