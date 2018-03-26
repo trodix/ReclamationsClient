@@ -6,6 +6,66 @@
         readLesReclamations()
     End Sub
 
+    Public Function ReadUneReclamationById(idRC As Integer) As ClsReclamation
+        Dim laReclamation As ClsReclamation
+        'Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[RECLAMATIONS] " &
+        '"left JOIN [dbReclamationsClient].[dbo].[TYPES_CAUSE].[TYPES_CAUSE] ON [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause = [dbReclamationsClient].[dbo].[RECLAMATIONS].idTypeCause " &
+        '"left JOIN [dbReclamationsClient].[dbo].[TYPES_CAUSE].[CATEGORIES_CAUSE] ON [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE].idCategCause = [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause " &
+        '"WHERE [dbReclamationsClient].[dbo].[RECLAMATIONS].idReclamation = " & idRC
+        'MsgBox(req)
+        ' "SELECT * FROM [dbReclamationsClient].[dbo].[RECLAMATIONS],[dbReclamationsClient].[dbo].[TYPES_CAUSE],[dbReclamationsClient].[dbo].[CATEGORIES_CAUSE] WHERE [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause = [dbReclamationsClient].[dbo].[RECLAMATIONS].idTypeCause and [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE].idCategCause = [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause and  [dbReclamationsClient].[dbo].[RECLAMATIONS].idReclamation = " & idRC
+        Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[RECLAMATIONS] WHERE idReclamation = " & idRC
+        Using stmt As New ClassConnection.ClsOdbcConnection(req, ClassConnection.ClsChaineConnection.ChaineConnection.ENTRETIEN)
+            With stmt
+                .OdbcReader.Read()
+
+                Dim CodeClient As String = ""
+                Dim NomClient As String = ""
+                Dim ContactClient As String = ""
+                Dim TelephoneClient As String = ""
+                Dim MailClient As String = ""
+                Dim TypeClient As String = ""
+                Dim DateReception As Date = Date.Now
+                Dim NumConfInitiale As String = ""
+                Dim Commentaires As String = ""
+                Dim CommentairesAnalyse As String = ""
+                Dim Statut As String = ""
+                Dim NbPieces As Integer = 0
+                Dim ValeurMarchande As Decimal = 0
+                Dim CoutTransport As Decimal = 0
+                Dim idTypeCause As Integer = 0
+                Dim idCategCause As Integer = 0
+                Dim ConfIni As String = ""
+                Dim PieceRetour As Integer = 0
+                Dim ReferenceClient As String = ""
+
+                If Not IsDBNull(.OdbcReader("CodeClient")) Then CodeClient = .OdbcReader("CodeClient")
+                If Not IsDBNull(.OdbcReader("NomClient")) Then NomClient = .OdbcReader("NomClient")
+                If Not IsDBNull(.OdbcReader("ContactClient")) Then ContactClient = .OdbcReader("ContactClient")
+                If Not IsDBNull(.OdbcReader("TelephoneClient")) Then TelephoneClient = .OdbcReader("TelephoneClient")
+                If Not IsDBNull(.OdbcReader("MailClient")) Then MailClient = .OdbcReader("MailClient")
+                If Not IsDBNull(.OdbcReader("TypeClient")) Then TypeClient = .OdbcReader("TypeClient")
+                If Not IsDBNull(.OdbcReader("DateReception")) Then DateReception = .OdbcReader("DateReception")
+                If Not IsDBNull(.OdbcReader("NumConfInitiale")) Then NumConfInitiale = .OdbcReader("NumConfInitiale")
+                If Not IsDBNull(.OdbcReader("Commentaires")) Then Commentaires = .OdbcReader("Commentaires")
+                If Not IsDBNull(.OdbcReader("CommentairesAnalyse")) Then CommentairesAnalyse = .OdbcReader("CommentairesAnalyse")
+                If Not IsDBNull(.OdbcReader("Statut")) Then Statut = .OdbcReader("Statut")
+                If Not IsDBNull(.OdbcReader("NbPieces")) Then NbPieces = .OdbcReader("NbPieces")
+                If Not IsDBNull(.OdbcReader("ValeurMarchande")) Then ValeurMarchande = .OdbcReader("ValeurMarchande")
+                If Not IsDBNull(.OdbcReader("CoutTransport")) Then CoutTransport = .OdbcReader("CoutTransport")
+                'If Not IsDBNull(.OdbcReader("idTypeCause")) Then idTypeCause = .OdbcReader("idTypeCause")
+                'If Not IsDBNull(.OdbcReader("idCategCause")) Then idCategCause = .OdbcReader("idCategCause")
+                If Not IsDBNull(.OdbcReader("NumConfInitiale")) Then ConfIni = .OdbcReader("NumConfInitiale")
+                If Not IsDBNull(.OdbcReader("PieceRetour")) Then PieceRetour = .OdbcReader("PieceRetour")
+                If Not IsDBNull(.OdbcReader("ReferenceClient")) Then ReferenceClient = .OdbcReader("ReferenceClient")
+
+                Dim leClient As New ClsClient(CodeClient, NomClient, ContactClient, TelephoneClient, MailClient, ReferenceClient, TypeClient)
+                laReclamation = New ClsReclamation(.OdbcReader("idReclamation"), DateReception, Statut, NbPieces, NumConfInitiale, ValeurMarchande, CoutTransport, idTypeCause, idCategCause, Commentaires, CommentairesAnalyse, ConfIni, PieceRetour, leClient)
+            End With
+        End Using
+
+        Return laReclamation
+    End Function
 
 
     Private Sub readLesReclamations()
@@ -28,16 +88,16 @@
                     Dim Statut As String = ""
 
                     If Not IsDBNull(.OdbcReader("CodeClient")) Then CodeClient = .OdbcReader("CodeClient")
-                    If Not IsDBNull(.OdbcReader("NomClient")) Then CodeClient = .OdbcReader("NomClient")
-                    If Not IsDBNull(.OdbcReader("ContactClient")) Then CodeClient = .OdbcReader("ContactClient")
-                    If Not IsDBNull(.OdbcReader("TelephoneClient")) Then CodeClient = .OdbcReader("TelephoneClient")
-                    If Not IsDBNull(.OdbcReader("MailClient")) Then CodeClient = .OdbcReader("MailClient")
-                    If Not IsDBNull(.OdbcReader("TypeClient")) Then CodeClient = .OdbcReader("TypeClient")
-                    If Not IsDBNull(.OdbcReader("DateReception")) Then CodeClient = .OdbcReader("DateReception")
-                    If Not IsDBNull(.OdbcReader("NumConfInitiale")) Then CodeClient = .OdbcReader("NumConfInitiale")
-                    If Not IsDBNull(.OdbcReader("Commentaires")) Then CodeClient = .OdbcReader("Commentaires")
-                    If Not IsDBNull(.OdbcReader("CommentairesAnalyse")) Then CodeClient = .OdbcReader("CommentairesAnalyse")
-                    If Not IsDBNull(.OdbcReader("Statut")) Then CodeClient = .OdbcReader("Statut")
+                    If Not IsDBNull(.OdbcReader("NomClient")) Then NomClient = .OdbcReader("NomClient")
+                    If Not IsDBNull(.OdbcReader("ContactClient")) Then ContactClient = .OdbcReader("ContactClient")
+                    If Not IsDBNull(.OdbcReader("TelephoneClient")) Then TelephoneClient = .OdbcReader("TelephoneClient")
+                    If Not IsDBNull(.OdbcReader("MailClient")) Then MailClient = .OdbcReader("MailClient")
+                    If Not IsDBNull(.OdbcReader("TypeClient")) Then TypeClient = .OdbcReader("TypeClient")
+                    If Not IsDBNull(.OdbcReader("DateReception")) Then DateReception = .OdbcReader("DateReception")
+                    If Not IsDBNull(.OdbcReader("NumConfInitiale")) Then NumConfInitiale = .OdbcReader("NumConfInitiale")
+                    If Not IsDBNull(.OdbcReader("Commentaires")) Then Commentaires = .OdbcReader("Commentaires")
+                    If Not IsDBNull(.OdbcReader("CommentairesAnalyse")) Then CommentairesAnalyse = .OdbcReader("CommentairesAnalyse")
+                    If Not IsDBNull(.OdbcReader("Statut")) Then Statut = .OdbcReader("Statut")
 
                     Dim leClient As New ClsClient(CodeClient, NomClient, ContactClient, TelephoneClient, MailClient, TypeClient)
                     Dim laReclamation As New ClsReclamation(.OdbcReader("idReclamation"), DateReception, NumConfInitiale, Commentaires, CommentairesAnalyse, Statut, leClient)
@@ -48,12 +108,13 @@
     End Sub
 
     Public Function InsertEnreg(laReclamation As ClsReclamation) As Integer
-        Dim req As String = "INSERT INTO [dbReclamationsClient].[dbo].[RECLAMATIONS] (DateReception, Statut, Commentaires, NumConfInitiale, ReferenceClient, TypeClient, CodeClient, NomClient, ContactClient, TelephoneClient, MailClient) VALUES('" &
+        Dim req As String = "INSERT INTO [dbReclamationsClient].[dbo].[RECLAMATIONS] (DateReception, Statut, Commentaires, NumConfInitiale, ReferenceClient, 
+            TypeClient, CodeClient, NomClient, ContactClient, TelephoneClient, MailClient) VALUES('" &
                 laReclamation._DateReception & "', '" &
                 laReclamation._Statut & "', '" &
                 ReplaceSpecialChars(laReclamation._Commentaires) & "', '" &
                 laReclamation._NumConfInitiale & "', '" &
-                laReclamation._RefClient & "', '" &
+                laReclamation._leClient._RefClient & "', '" &
                 laReclamation._leClient._TypeClient & "',' " &
                 laReclamation._leClient._Code & "', '" &
                 laReclamation._leClient._Nom & "', '" &

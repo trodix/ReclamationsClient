@@ -6,10 +6,41 @@
     Property _laReclamationClient As New ClsReclamation()
     Property _lesClients As List(Of ClsClient)
 
+    Property _idRC As Integer = -1
+
     Private Sub UI_RC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         AddHandler Btn_AnalyseRejet.Click, AddressOf Btn_Analyse_Click
         AddHandler Btn_AnalyseValider.Click, AddressOf Btn_Analyse_Click
+
+        If Not _idRC = -1 Then
+            _laReclamationClient = _laSQLReclamationClient.ReadUneReclamationById(_idRC)
+
+            Label_Statut.Text = _laReclamationClient._Statut
+            RTB_Commentaire.Text = _laReclamationClient._Commentaires
+            If _laReclamationClient._leClient._TypeClient = RB_Soustraitance.Text Then
+                RB_Soustraitance.Checked = True
+            ElseIf _laReclamationClient._leClient._TypeClient = RB_Agencement.Text Then
+                RB_Agencement.Checked = True
+            End If
+            Dtp_DateReception.Value = _laReclamationClient._DateReception
+            Cmb_Clients.Text = _laReclamationClient._leClient._Code
+            Label_NomCli.Text = _laReclamationClient._leClient._Nom
+            Label_ContactCli.Text = _laReclamationClient._leClient._Contact
+            Label_TelCli.Text = _laReclamationClient._leClient._Tel
+            Label_MailCli.Text = _laReclamationClient._leClient._Mail
+            Tbx_RefClient.Text = _laReclamationClient._leClient._RefClient
+            Tbx_ConfIni.Text = _laReclamationClient._ConfIni
+            RTB_AnalyseCommentaire.Text = _laReclamationClient._CommentairesAnalyse
+            Nud_NbPieces.Value = _laReclamationClient._NbPieces
+            Nud_ValMarchande.Value = _laReclamationClient._ValeurMarchande
+            Nud_CoutTransport.Value = _laReclamationClient._CoutTransport
+            If _laReclamationClient._PieceRetour = True Then
+                RB_PieceRetour_Oui.Checked = True
+            ElseIf _laReclamationClient._PieceRetour = False Then
+                RB_PieceRetour_Non.Checked = True
+            End If
+        End If
 
         'If Not _laReclamationClient._Statut = "" Then Label_Statut.Text = _laReclamationClient._Statut
 
@@ -59,7 +90,7 @@
 
         _laReclamationClient._DateReception = Dtp_DateReception.Value
         _laReclamationClient._ConfIni = Tbx_ConfIni.Text
-        _laReclamationClient._RefClient = Tbx_RefClient.Text
+        _laReclamationClient._leClient._RefClient = Tbx_RefClient.Text
         _laReclamationClient._Commentaires = RTB_Commentaire.Text
         _laReclamationClient._Statut = "Analyse"
         _laReclamationClient._leClient._Code = Cmb_Clients.SelectedItem
@@ -67,8 +98,10 @@
         _laReclamationClient._leClient._Contact = Label_ContactCli.Text
         _laReclamationClient._leClient._Mail = Label_MailCli.Text
         _laReclamationClient._leClient._Tel = Label_TelCli.Text
+        If RB_Agencement.Checked Then _laReclamationClient._leClient._TypeClient = RB_Agencement.Text
+        If RB_Soustraitance.Checked Then _laReclamationClient._leClient._TypeClient = RB_Soustraitance.Text
 
-        Dim laReclamationClient As New ClsReclamation(_laReclamationClient._DateReception, _laReclamationClient._ConfIni, _laReclamationClient._RefClient, _laReclamationClient._Commentaires, _laReclamationClient._Statut, _laReclamationClient._leClient)
+        Dim laReclamationClient As New ClsReclamation(_laReclamationClient._DateReception, _laReclamationClient._ConfIni, _laReclamationClient._Commentaires, _laReclamationClient._Statut, _laReclamationClient._leClient)
         _laReclamationClient._idRC = _laSQLReclamationClient.InsertEnreg(laReclamationClient)
 
     End Sub
