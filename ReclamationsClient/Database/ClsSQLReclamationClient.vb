@@ -1,6 +1,8 @@
 ﻿Public Class ClsSQLReclamationClient
 
     Property _lesReclamations As New Dictionary(Of Integer, ClsReclamation)
+    'Property _lesTypesCause As New Dictionary(Of Integer, String)
+    'Property _lesCategCause As New Dictionary(Of Integer, String)
 
     Public Sub New()
         readLesReclamations()
@@ -9,8 +11,8 @@
     Public Function ReadUneReclamationById(idRC As Integer) As ClsReclamation
         Dim laReclamation As ClsReclamation
         'Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[RECLAMATIONS] " &
-        '"left JOIN [dbReclamationsClient].[dbo].[TYPES_CAUSE].[TYPES_CAUSE] ON [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause = [dbReclamationsClient].[dbo].[RECLAMATIONS].idTypeCause " &
-        '"left JOIN [dbReclamationsClient].[dbo].[TYPES_CAUSE].[CATEGORIES_CAUSE] ON [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE].idCategCause = [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause " &
+        '"LEFT JOIN [dbReclamationsClient].[dbo].[TYPES_CAUSE].[TYPES_CAUSE] ON [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause = [dbReclamationsClient].[dbo].[RECLAMATIONS].idTypeCause " &
+        '"LEFT JOIN [dbReclamationsClient].[dbo].[TYPES_CAUSE].[CATEGORIES_CAUSE] ON [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE].idCategCause = [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause " &
         '"WHERE [dbReclamationsClient].[dbo].[RECLAMATIONS].idReclamation = " & idRC
         'MsgBox(req)
         ' "SELECT * FROM [dbReclamationsClient].[dbo].[RECLAMATIONS],[dbReclamationsClient].[dbo].[TYPES_CAUSE],[dbReclamationsClient].[dbo].[CATEGORIES_CAUSE] WHERE [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause = [dbReclamationsClient].[dbo].[RECLAMATIONS].idTypeCause and [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE].idCategCause = [dbReclamationsClient].[dbo].[TYPES_CAUSE].idTypeCause and  [dbReclamationsClient].[dbo].[RECLAMATIONS].idReclamation = " & idRC
@@ -60,7 +62,8 @@
                 If Not IsDBNull(.OdbcReader("ReferenceClient")) Then ReferenceClient = .OdbcReader("ReferenceClient")
 
                 Dim leClient As New ClsClient(CodeClient, NomClient, ContactClient, TelephoneClient, MailClient, ReferenceClient, TypeClient)
-                laReclamation = New ClsReclamation(.OdbcReader("idReclamation"), DateReception, Statut, NbPieces, NumConfInitiale, ValeurMarchande, CoutTransport, idTypeCause, idCategCause, Commentaires, CommentairesAnalyse, ConfIni, PieceRetour, leClient)
+                laReclamation = New ClsReclamation(.OdbcReader("idReclamation"), DateReception, Statut, NbPieces, NumConfInitiale, ValeurMarchande, CoutTransport,
+                                                   idTypeCause, idCategCause, Commentaires, CommentairesAnalyse, ConfIni, PieceRetour, leClient)
             End With
         End Using
 
@@ -163,9 +166,63 @@
         End Using
     End Sub
 
+    Public Function ReadLesTypesCause(LibCateg As String) As Dictionary(Of Integer, String)
+
+        'Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[TYPES_CAUSE] 
+        '    RIGHT JOIN [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE] 
+        '    on [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE].idCategCause = [dbReclamationsClient].[dbo].[TYPES_CAUSE].idCategCause
+        '    WHERE LibelleCateg = '" & LibCateg & "'"
+
+        'Dim s_FbMyReader As New ClassConnection.ClsOdbcConnection(req, ClassConnection.ClsChaineConnection.ChaineConnection.ENTRETIEN)
+        's_FbMyReader.OdbcReader.Read()
+        Dim result As New Dictionary(Of Integer, String)
+        'Dim idType As Integer = -1
+        'Dim LibType As String = ""
+        'If Not IsDBNull(s_FbMyReader.OdbcReader("idTypeCause")) Then idType = s_FbMyReader.OdbcReader("idTypeCause")
+        'If Not IsDBNull(s_FbMyReader.OdbcReader("LibelleTypeCause")) Then idType = s_FbMyReader.OdbcReader("LibelleTypeCause")
+        result.Add(1, "Categorie")
+        'result.Add(idType, LibType)
+
+        Return result
+
+    End Function
+
+    Public Function ReadLesCategCause() As Dictionary(Of Integer, String)
+
+        Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[CATEGORIES_CAUSE]"
+
+        Dim s_FbMyReader As New ClassConnection.ClsOdbcConnection(req, ClassConnection.ClsChaineConnection.ChaineConnection.ENTRETIEN)
+        Dim result As New Dictionary(Of Integer, String)
+        While s_FbMyReader.OdbcReader.Read()
+
+            result.Add(s_FbMyReader.OdbcReader("idCategCause"), s_FbMyReader.OdbcReader("LibelleCateg"))
+
+        End While
+
+        Return result
+
+    End Function
+
+    Public Function ReadLesPJByRC(idRC As Integer) As List(Of Fichier)
+
+        Dim req As String = "SELECT * FROM [dbReclamationsClient].[dbo].[PIECES_JOINTES] WHERE idRC = " & idRC
+
+        Dim s_FbMyReader As New ClassConnection.ClsOdbcConnection(req, ClassConnection.ClsChaineConnection.ChaineConnection.ENTRETIEN)
+        Dim result As New List(Of Fichier)
+
+        While s_FbMyReader.OdbcReader.Read()
+
+            Dim leFichier As New Fichier(s_FbMyReader.OdbcReader("NomFichier"), s_FbMyReader.OdbcReader("ExtensionFichier").replace(" ", ""), s_FbMyReader.OdbcReader("Fichier"))
+            result.Add(leFichier)
+
+        End While
+
+        Return result
+
+    End Function
+
     Private Function ReplaceSpecialChars(laChaine As String) As String
         laChaine = laChaine.Replace("'", "''")
-        laChaine = laChaine.Replace(",", "")
         Return laChaine
     End Function
 

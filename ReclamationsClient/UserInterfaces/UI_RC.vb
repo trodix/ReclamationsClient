@@ -2,16 +2,29 @@
 
     Property _laSQLReclamationClient As New ClsSQLReclamationClient
     Property _leSQLClient As New ClsSQLClient
+    Property _FileManager As New FilesIntoDatabase.FileManager("Server=SRV-BDD\SQLEXPRESS2008;Database=dbReclamationsClient;Uid=sa;Pwd=+BTS08;")
 
     Property _laReclamationClient As New ClsReclamation()
     Property _lesClients As List(Of ClsClient)
 
     Property _idRC As Integer = -1
+    Property _selectedTypeCause As String = ""
+    Property _lesPJ As List(Of Fichier)
 
     Private Sub UI_RC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         AddHandler Btn_AnalyseRejet.Click, AddressOf Btn_Analyse_Click
         AddHandler Btn_AnalyseValider.Click, AddressOf Btn_Analyse_Click
+
+        For Each item As String In _laSQLReclamationClient.ReadLesCategCause.Values
+            Cmb_CategCause.Items.Add(item)
+        Next
+
+        For Each item As String In _laSQLReclamationClient.ReadLesTypesCause(_selectedTypeCause).Values
+            Cmb_TypeCause.Items.Add(item)
+        Next
+
+        AfficherPJ()
 
         If Not _idRC = -1 Then
             _laReclamationClient = _laSQLReclamationClient.ReadUneReclamationById(_idRC)
@@ -41,8 +54,6 @@
                 RB_PieceRetour_Non.Checked = True
             End If
         End If
-
-        'If Not _laReclamationClient._Statut = "" Then Label_Statut.Text = _laReclamationClient._Statut
 
     End Sub
 
@@ -149,5 +160,40 @@
 
     Private Sub RB_PieceRetour_Non_CheckedChanged(sender As RadioButton, e As EventArgs) Handles RB_PieceRetour_Non.CheckedChanged
         _laReclamationClient._PieceRetour = False
+    End Sub
+
+    Private Sub Btn_AjouterPJ_Click(sender As Object, e As EventArgs) Handles Btn_AjouterPJ.Click
+        OpenFileDialog1.Filter = "All files (*.*) |*.*"
+        OpenFileDialog1.Multiselect = False
+        If OpenFileDialog1.ShowDialog = DialogResult.OK Then
+            Try
+                _FileManager.Sauvegarde("INSERT INTO [dbReclamationsClient].[dbo].[PIECES_JOINTES] (NomFichier, ExtensionFichier, Fichier, idRC) VALUES(@Nom, @Extension, @Fichier, " & _idRC & ")", OpenFileDialog1)
+            Catch ex As Exception
+                MsgBox("Problème d'insertion du fichier dans la base de données", MsgBoxStyle.Critical)
+            End Try
+            AfficherPJ()
+        End If
+    End Sub
+
+    Private Sub AfficherPJ()
+        _lesPJ = _laSQLReclamationClient.ReadLesPJByRC(_idRC)
+        For Each pj As Fichier In _lesPJ
+            LB_PiecesJointes.Items.Add(pj._Nom & pj._Ext)
+        Next
+    End Sub
+
+    Private Sub LB_PiecesJointes_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles LB_PiecesJointes.MouseDoubleClick
+
+        Dim result = From pj In _lesPJ
+                     Where sender.Text = (pj._Nom & pj._Ext)
+
+        For Each item As Fichier In result
+            _FileManager.ConstruireEtOuvrir(item._Nom, item._Ext, item._Contenu)
+        Next
+
+    End Sub
+
+    Private Sub Btn_SupprPJ_Click(sender As Object, e As EventArgs) Handles Btn_SupprPJ.Click
+        '_FileManager.Supprimer()
     End Sub
 End Class
