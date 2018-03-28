@@ -10,6 +10,9 @@
     Property _idRC As Integer = -1
     Property _selectedTypeCause As String = ""
     Property _lesPJ As List(Of Fichier)
+    Property _PjIdClicked As Integer = -1
+
+    'Private WithEvents item As New ListViewItem
 
     Private Sub UI_RC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -178,7 +181,9 @@
     Private Sub AfficherPJ()
         _lesPJ = _laSQLReclamationClient.ReadLesPJByRC(_idRC)
         For Each pj As Fichier In _lesPJ
-            LB_PiecesJointes.Items.Add(pj._Nom & pj._Ext)
+
+            LB_PiecesJointes.Items.Add(New MyList(pj._Id, pj._Nom & pj._Ext))
+
         Next
     End Sub
 
@@ -193,7 +198,25 @@
 
     End Sub
 
+
+
     Private Sub Btn_SupprPJ_Click(sender As Object, e As EventArgs) Handles Btn_SupprPJ.Click
-        '_FileManager.Supprimer()
+
+        Try
+            _laSQLReclamationClient.SupprimerPJ(_PjIdClicked)
+            LB_PiecesJointes.Items.Remove(LB_PiecesJointes.SelectedItem)
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+        End Try
+
     End Sub
+
+    Private Sub LB_PiecesJointes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LB_PiecesJointes.SelectedIndexChanged
+        Dim item As MyList = LB_PiecesJointes.SelectedItem
+        _PjIdClicked = item.MyId
+    End Sub
+
 End Class
+
+
+

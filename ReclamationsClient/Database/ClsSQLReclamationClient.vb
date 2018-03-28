@@ -212,7 +212,7 @@
 
         While s_FbMyReader.OdbcReader.Read()
 
-            Dim leFichier As New Fichier(s_FbMyReader.OdbcReader("NomFichier"), s_FbMyReader.OdbcReader("ExtensionFichier").replace(" ", ""), s_FbMyReader.OdbcReader("Fichier"))
+            Dim leFichier As New Fichier(s_FbMyReader.OdbcReader("NomFichier"), s_FbMyReader.OdbcReader("ExtensionFichier").replace(" ", ""), s_FbMyReader.OdbcReader("Fichier"), s_FbMyReader.OdbcReader("idPieceJointe"))
             result.Add(leFichier)
 
         End While
@@ -220,6 +220,17 @@
         Return result
 
     End Function
+
+    Public Sub SupprimerPJ(idPJ As Integer)
+
+        Dim req As String = "DELETE FROM [dbReclamationsClient].[dbo].[PIECES_JOINTES] WHERE idPieceJointe = " & idPJ
+
+        Using _odbcConnection As New ClassConnection.ClsOdbcConnection(ClassConnection.ClsChaineConnection.ChaineConnection.ENTRETIEN)
+            _odbcConnection.OdbcNotSelectQuery(req)
+        End Using
+
+    End Sub
+
 
     Private Function ReplaceSpecialChars(laChaine As String) As String
         laChaine = laChaine.Replace("'", "''")

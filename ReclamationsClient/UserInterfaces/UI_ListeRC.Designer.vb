@@ -32,6 +32,8 @@ Partial Class UI_ListeRC
         Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
         Me.Btn_OuvrirRC = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Tbx_Search = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.TableLayoutPanel1.SuspendLayout()
         CType(Me.DGV_Liste, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TableLayoutPanel2.SuspendLayout()
@@ -113,11 +115,15 @@ Partial Class UI_ListeRC
         'TableLayoutPanel2
         '
         Me.TableLayoutPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(137, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.TableLayoutPanel2.ColumnCount = 2
+        Me.TableLayoutPanel2.ColumnCount = 4
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 120.0!))
         Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.Btn_OuvrirRC, 1, 0)
+        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150.0!))
+        Me.TableLayoutPanel2.Controls.Add(Me.Btn_OuvrirRC, 3, 0)
         Me.TableLayoutPanel2.Controls.Add(Me.Label1, 0, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Tbx_Search, 2, 0)
+        Me.TableLayoutPanel2.Controls.Add(Me.Label2, 1, 0)
         Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel2.Location = New System.Drawing.Point(3, 23)
         Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
@@ -152,10 +158,32 @@ Partial Class UI_ListeRC
         Me.Label1.ForeColor = System.Drawing.Color.White
         Me.Label1.Location = New System.Drawing.Point(3, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(958, 44)
+        Me.Label1.Size = New System.Drawing.Size(688, 44)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Liste des réclamations client"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Tbx_Search
+        '
+        Me.Tbx_Search.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Tbx_Search.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tbx_Search.Location = New System.Drawing.Point(817, 10)
+        Me.Tbx_Search.Name = "Tbx_Search"
+        Me.Tbx_Search.Size = New System.Drawing.Size(144, 24)
+        Me.Tbx_Search.TabIndex = 3
+        '
+        'Label2
+        '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(697, 12)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(114, 19)
+        Me.Label2.TabIndex = 4
+        Me.Label2.Text = "Rechercher"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'UI_ListeRC
         '
@@ -182,4 +210,6 @@ Partial Class UI_ListeRC
     Friend WithEvents Col_CodeClient As DataGridViewTextBoxColumn
     Friend WithEvents Col_NumConfIni As DataGridViewTextBoxColumn
     Friend WithEvents Col_Statut As DataGridViewTextBoxColumn
+    Friend WithEvents Tbx_Search As TextBox
+    Friend WithEvents Label2 As Label
 End Class

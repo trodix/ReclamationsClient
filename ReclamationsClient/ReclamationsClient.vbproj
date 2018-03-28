@@ -104,6 +104,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="MyList.vb" />
     <Compile Include="UserInterfaces\UI_ListeRC.Designer.vb">
       <DependentUpon>UI_ListeRC.vb</DependentUpon>
     </Compile>
