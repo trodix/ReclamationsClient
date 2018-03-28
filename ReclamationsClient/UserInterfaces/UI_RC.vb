@@ -169,7 +169,7 @@
             Try
                 _FileManager.Sauvegarde("INSERT INTO [dbReclamationsClient].[dbo].[PIECES_JOINTES] (NomFichier, ExtensionFichier, Fichier, idRC) VALUES(@Nom, @Extension, @Fichier, " & _idRC & ")", OpenFileDialog1)
             Catch ex As Exception
-                MsgBox("Problème d'insertion du fichier dans la base de données", MsgBoxStyle.Critical)
+                MsgBox("Problème d'insertion du fichier dans la base de données" & vbNewLine & ex.Message, MsgBoxStyle.Critical)
             End Try
             AfficherPJ()
         End If
