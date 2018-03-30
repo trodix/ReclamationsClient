@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ReclamationsClient.ClsSQLClient" Collapsed="true">
+    <Position X="5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Database\ClsSQLClient.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.ClsSQLReclamationClient" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAhkAAAAAAAAAACAAAAAAACCAEAAEQAAAQAAEAAA=</HashCode>
+      <FileName>Database\ClsSQLReclamationClient.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.ClsClient" Collapsed="true">
+    <Position X="5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEgAAAAAAAAABAAAgAgAAAAAIAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ClsClient.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.ClsFichier" Collapsed="true">
+    <Position X="6.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAgAAAAAAAAAAAAQAAAAAAAAAAEAAA=</HashCode>
+      <FileName>Entities\ClsFichier.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.ClsMyList" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAQAABAAAAAAAAAA=</HashCode>
+      <FileName>Entities\ClsMyList.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.ClsReclamation" Collapsed="true">
+    <Position X="10.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACAGEAJAAAAgCgAAQAAAACAAAAAAAAAAAAgAgAAA=</HashCode>
+      <FileName>Entities\ClsReclamation.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.FrmMenu" Collapsed="true">
+    <Position X="10.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAIQABACAAAAAAAACAAAAiAAAAAAGAAABAAAAAAAA=</HashCode>
+      <FileName>Forms\FrmMenu.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.FrmAvoir" Collapsed="true">
+    <Position X="8.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAIAAAPCAAgAAAAAmAAAACAIAMAAEAAAAgAAAAAAA=</HashCode>
+      <FileName>FrmAvoir.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.UI_ListeRC" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEgMCAAEAAAAACMACiCAAAEAAAEAAgADBCQAAA=</HashCode>
+      <FileName>UserInterfaces\UI_ListeRC.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.UI_RC" Collapsed="true">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KgAk4gOQOHEAlIoAOxCIwMEiQHH3kAOEFZAAAgAEgAQ=</HashCode>
+      <FileName>UserInterfaces\UI_RC.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.My.MyApplication" Collapsed="true">
+    <Position X="8.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReclamationsClient.My.MySettings" Collapsed="true">
+    <Position X="10.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAABEAAAAABAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="System.Object" Collapsed="true">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.Form" Collapsed="true">
+    <Position X="12.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="System.Windows.Forms.UserControl" Collapsed="true">
+    <Position X="14.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Module Name="ReclamationsClient.My.MySettingsProperty" Collapsed="true">
+    <Position X="5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="ReclamationsClient.My.Resources.Resources" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

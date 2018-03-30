@@ -1,4 +1,4 @@
-﻿Class MyList
+﻿Class ClsMyList
     Public MyId As Integer
     Public MyStr As String
 

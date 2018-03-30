@@ -1,5 +1,10 @@
 ﻿Public Class ClsSQLClient
 
+    ''' <summary>
+    ''' Retourne la liste des clients
+    ''' </summary>
+    ''' <param name="Code">Code du client [CLCTABRE] dans CEGID</param>
+    ''' <remarks></remarks>
     Public Function readLesClientsByCode(Code As String) As List(Of ClsClient)
         Dim lesClients As New List(Of ClsClient)
         Using s_FbMyReader As New ClassConnection.ClsOdbcConnection("SELECT CLCTABRE, CLCTNOM, CLCTCONTA1, CLCTTELEP1, CLCTEMAIL FROM [pmi].[dbo].[CLIENT] WHERE CLCTABRE LIKE '" & Code & "' ORDER BY CLCTABRE", ClassConnection.ClsChaineConnection.ChaineConnection.CEGID_ReadOnly)

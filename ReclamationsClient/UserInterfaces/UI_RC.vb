@@ -9,10 +9,8 @@
 
     Property _idRC As Integer = -1
     Property _selectedTypeCause As String = ""
-    Property _lesPJ As List(Of Fichier)
+    Property _lesPJ As List(Of ClsFichier)
     Property _PjIdClicked As Integer = -1
-
-    'Private WithEvents item As New ListViewItem
 
     Private Sub UI_RC_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -23,13 +21,13 @@
             Cmb_CategCause.Items.Add(item)
         Next
 
-        For Each item As String In _laSQLReclamationClient.ReadLesTypesCause(_selectedTypeCause).Values
+        For Each item As String In _laSQLReclamationClient.ReadLesTypesCause().Values
             Cmb_TypeCause.Items.Add(item)
         Next
 
         AfficherPJ()
 
-        If Not _idRC = -1 Then
+        If Not _idRC <= 0 Then
             _laReclamationClient = _laSQLReclamationClient.ReadUneReclamationById(_idRC)
 
             Label_Statut.Text = _laReclamationClient._Statut
@@ -56,6 +54,8 @@
             ElseIf _laReclamationClient._PieceRetour = False Then
                 RB_PieceRetour_Non.Checked = True
             End If
+            Cmb_TypeCause.Text = _laReclamationClient._TypeCause
+            Cmb_CategCause.Text = _laReclamationClient._CategCause
         End If
 
     End Sub
@@ -150,9 +150,11 @@
         _laReclamationClient._ValeurMarchande = Nud_ValMarchande.Value
         _laReclamationClient._CoutTransport = Nud_CoutTransport.Value
         _laReclamationClient._Commentaires = RTB_Commentaire.Text
+        _laReclamationClient._CategCause = Cmb_CategCause.SelectedItem
+        _laReclamationClient._TypeCause = Cmb_TypeCause.SelectedItem
 
         Dim laReclamationClient As New ClsReclamation(_laReclamationClient._idRC, _laReclamationClient._Statut, _laReclamationClient._Commentaires, _laReclamationClient._NbPieces,
-                                                      _laReclamationClient._ValeurMarchande, _laReclamationClient._CoutTransport)
+                                                      _laReclamationClient._ValeurMarchande, _laReclamationClient._CoutTransport, _laReclamationClient._TypeCause, _laReclamationClient._CategCause, _laReclamationClient._PieceRetour)
         _laSQLReclamationClient.InsertRecencement(laReclamationClient)
 
     End Sub
@@ -180,9 +182,9 @@
 
     Private Sub AfficherPJ()
         _lesPJ = _laSQLReclamationClient.ReadLesPJByRC(_idRC)
-        For Each pj As Fichier In _lesPJ
+        For Each pj As ClsFichier In _lesPJ
 
-            LB_PiecesJointes.Items.Add(New MyList(pj._Id, pj._Nom & pj._Ext))
+            LB_PiecesJointes.Items.Add(New ClsMyList(pj._Id, pj._Nom & pj._Ext))
 
         Next
     End Sub
@@ -192,7 +194,7 @@
         Dim result = From pj In _lesPJ
                      Where sender.Text = (pj._Nom & pj._Ext)
 
-        For Each item As Fichier In result
+        For Each item As ClsFichier In result
             _FileManager.ConstruireEtOuvrir(item._Nom, item._Ext, item._Contenu)
         Next
 
@@ -212,10 +214,15 @@
     End Sub
 
     Private Sub LB_PiecesJointes_SelectedIndexChanged(sender As Object, e As EventArgs) Handles LB_PiecesJointes.SelectedIndexChanged
-        Dim item As MyList = LB_PiecesJointes.SelectedItem
+        Dim item As ClsMyList = LB_PiecesJointes.SelectedItem
         _PjIdClicked = item.MyId
     End Sub
 
+    Private Sub Btn_Avoir_Click(sender As Object, e As EventArgs) Handles Btn_Avoir.Click
+        Dim _f As New FrmAvoir
+        _f._NomClient = Label_NomCli.Text
+        _f.ShowDialog()
+    End Sub
 End Class
 
 

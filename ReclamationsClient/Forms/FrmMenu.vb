@@ -18,6 +18,11 @@
 
     End Sub
 
+    ''' <summary>
+    ''' Affiche une nouvelle instance d'une interface utilisateur dans le Formulaire principal de l'application
+    ''' <param name="MyUserInterface"></param> 
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub LoadPage(MyUserInterface As Object)
 
         Panel_Main.Controls.Clear()

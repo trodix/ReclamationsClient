@@ -1,4 +1,4 @@
-﻿Public Class Fichier
+﻿Public Class ClsFichier
 
     Property _Id As Integer
     Property _Nom As String
