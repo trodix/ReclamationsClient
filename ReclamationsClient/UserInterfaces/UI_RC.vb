@@ -2,7 +2,7 @@
 
     Property _laSQLReclamationClient As New ClsSQLReclamationClient
     Property _leSQLClient As New ClsSQLClient
-    Property _FileManager As New FilesIntoDatabase.FileManager("Server=SRV-BDD\SQLEXPRESS2008;Database=dbReclamationsClient;Uid=sa;Pwd=+BTS08;")
+    Property _FileManager As New FilesIntoDatabase.FileManager("Server=SRV-BDD\SQLEXPRESS2008;Database=dbReclamationsClient;Uid=sa;Pwd=pass;")
 
     Property _laReclamationClient As New ClsReclamation()
     Property _lesClients As List(Of ClsClient)
